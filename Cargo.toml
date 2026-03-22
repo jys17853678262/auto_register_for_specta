@@ -1,0 +1,32 @@
+[package]
+name = "auto_register_for_specta"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "auto_register_for_specta"
+
+
+[dependencies]
+toml = "0.9.8"
+serde = { version = "1.0", features = ["derive"] }
+tracing = { version = "0.1.41", optional = true }
+thiserror = "2.0.12"
+walkdir = "2.5.0"
+syn = { version = "2.0.100", features = ["full"] }
+local_macro = { path = "./local_macro" }
+
+[dependencies.quote]
+version = "1.0.38"
+
+[dependencies.proc-macro2]
+version = "1.0.93"
+
+[dependencies.proc-macro-error]
+version = "1.0.4"
+
+[features]
+tracing = ["dep:tracing"]
