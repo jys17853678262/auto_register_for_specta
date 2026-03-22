@@ -10,7 +10,7 @@ mod info;
 use function::{find_workspace_dir, get_workspace_pkg_name};
 
 #[proc_macro_attribute]
-pub fn auto_collect_struct_type(_attr: TokenStream, item: TokenStream) -> TokenStream {
+pub fn auto_collect_struct_spec(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let input = parse_macro_input!(item as ItemStruct);
     let struct_name = input.ident.to_string();
 
@@ -46,7 +46,7 @@ pub fn auto_collect_struct_type(_attr: TokenStream, item: TokenStream) -> TokenS
 }
 
 #[proc_macro_attribute]
-pub fn auto_collect_command(_attr: TokenStream, item: TokenStream) -> TokenStream {
+pub fn auto_collect_command_spec(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let input = parse_macro_input!(item as ItemFn);
     let fn_name = input.sig.ident.to_string();
 
