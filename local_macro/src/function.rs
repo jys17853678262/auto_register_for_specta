@@ -70,5 +70,9 @@ pub fn get_workspace() -> CargoToml {
 /// get the workspace package name from the given workspace directory
 pub fn get_workspace_pkg_name() -> String {
     let cont = get_workspace();
-    cont.package.name
+    if cont.lib.is_some() {
+        return cont.lib.unwrap().name.clone();
+    } else {
+        return cont.package.name.clone();
+    }
 }

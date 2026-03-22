@@ -4,6 +4,7 @@ use serde::Deserialize;
 pub struct CargoToml {
     #[allow(dead_code)]
     pub package: Package,
+    pub lib: Option<Lib>,
     pub workspace: Workspace,
 }
 
@@ -20,4 +21,9 @@ pub struct Package {
 #[derive(Debug, Deserialize)]
 pub struct Workspace {
     pub members: Vec<String>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct Lib {
+    pub name: String,
 }

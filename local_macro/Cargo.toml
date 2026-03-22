@@ -13,6 +13,10 @@ tracing = { version = "0.1.41", optional = true }
 thiserror = "2.0.12"
 walkdir = "2.5.0"
 syn = { version = "2.0.100", features = ["full"] }
+tauri-specta = { version = "2.0.0-rc.21", features = [
+    "javascript",
+    "typescript",
+] }
 
 [dependencies.quote]
 version = "1.0.38"
